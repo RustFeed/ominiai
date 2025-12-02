@@ -1,0 +1,1553 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title data-i18n="app-title">
+            OmniAI - One AI App, Thousand Possibilities
+        </title>
+        <!-- 引入 Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- 引入 Lucide Icons 库 -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <style>
+            /* 确保 Inter 字体可用 */
+            :root {
+                --font-inter: "Inter", sans-serif;
+            }
+            body {
+                font-family: var(--font-inter);
+                background-color: #0d1117; /* 深色背景 */
+            }
+            /* Custom gradient for hero */
+            .hero-gradient {
+                background: linear-gradient(135deg, #1f2937 0%, #171d28 100%);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+            /* Gradient text effect */
+            .text-gradient {
+                background-image: linear-gradient(90deg, #6b21a8, #3b82f6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        </style>
+    </head>
+    <body class="text-white antialiased">
+        <!-- 导航栏 -->
+        <header
+            class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-sm shadow-lg"
+        >
+            <nav
+                class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+            >
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-gradient">OmniAI</span>
+                    <span
+                        class="text-sm text-gray-400 hidden sm:inline"
+                        data-i18n="nav-tagline"
+                        >Pluggable, Cross-Platform AI Assistant Framework</span
+                    >
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Switcher -->
+                    <select
+                        id="language-switcher"
+                        class="bg-gray-700 text-gray-200 text-sm py-1 px-2 rounded-lg cursor-pointer hover:bg-gray-600 transition"
+                    >
+                        <option value="en">English</option>
+                        <option value="zh">中文</option>
+                        <option value="jp">日本語</option>
+                    </select>
+
+                    <a
+                        href="#features"
+                        class="text-gray-300 hover:text-orange-400 transition duration-150 hidden sm:inline"
+                        data-i18n="nav-features"
+                        >Core Features</a
+                    >
+                    <a
+                        href="#scenarios"
+                        class="text-gray-300 hover:text-orange-400 transition duration-150 hidden sm:inline"
+                        data-i18n="nav-scenarios"
+                        >Use Cases</a
+                    >
+                    <a
+                        href="#pricing"
+                        class="text-gray-300 hover:text-orange-400 transition duration-150 hidden md:inline"
+                        data-i18n="nav-pricing"
+                        >Services</a
+                    >
+                    <a
+                        href="#"
+                        class="bg-orange-400 text-gray-900 font-semibold py-2 px-4 rounded-lg shadow-xl hover:bg-orange-500 transition duration-200"
+                        data-i18n="nav-download"
+                        >Download Now</a
+                    >
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- 英雄区 (Hero Section) -->
+            <section
+                class="hero-gradient text-center py-24 sm:py-32 border-b border-gray-800"
+            >
+                <div class="container mx-auto px-4 max-w-4xl">
+                    <h1
+                        class="text-5xl sm:text-7xl font-extrabold mb-6 leading-tight"
+                    >
+                        <span class="text-gradient" data-i18n="hero-title-1"
+                            >One AI App,</span
+                        >
+                        <br class="hidden sm:inline" />
+                        <span class="text-purple-300" data-i18n="hero-title-2"
+                            >Thousand Possibilities</span
+                        >
+                    </h1>
+                    <p
+                        class="text-xl sm:text-2xl text-gray-300 mb-10 font-light"
+                        data-i18n="hero-subtitle"
+                    >
+                        OmniAI: A high-performance, pluggable, cross-platform AI
+                        assistant framework built on Rust.
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+                    >
+                        <a
+                            href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold py-3 px-8 rounded-xl shadow-2xl shadow-blue-900/50 transition duration-300 transform hover:scale-105"
+                            data-i18n="hero-cta-download"
+                        >
+                            Free Download (Native Performance)
+                        </a>
+                        <a
+                            href="#features"
+                            class="bg-gray-700 hover:bg-gray-600 text-gray-200 text-lg font-bold py-3 px-8 rounded-xl shadow-lg transition duration-300 transform hover:scale-105"
+                            data-i18n="hero-cta-explore"
+                        >
+                            Explore "Personality Packs"
+                        </a>
+                    </div>
+                    <p
+                        class="text-sm text-gray-500 mt-6"
+                        data-i18n="hero-platforms"
+                    >
+                        🖥️ macOS / Windows / Linux / 📱 iOS / Android / 🌐 Web /
+                        ⌨️ CLI
+                    </p>
+                </div>
+            </section>
+
+            <!-- 核心特色 - 人格包 (Features - Personality Packs) -->
+            <section
+                id="features"
+                class="py-16 sm:py-24 bg-gray-900 border-b border-gray-800"
+            >
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-extrabold text-center mb-4">
+                        <span
+                            class="text-orange-400"
+                            data-i18n="section-features-h2-1"
+                            >"Personality Packs"</span
+                        >
+                        <span data-i18n="section-features-h2-2"
+                            >— Instantly Transform AI into an Expert</span
+                        >
+                    </h2>
+                    <p
+                        class="text-xl text-gray-400 text-center mb-16 max-w-3xl mx-auto"
+                        data-i18n="section-features-p"
+                    >
+                        The future of AI assistants should not be
+                        "one-size-fits-all." Switch AI personalities like
+                        changing clothes, becoming an exclusive domain expert in
+                        1 second.
+                    </p>
+
+                    <div
+                        class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+                    >
+                        <!-- 人格包 Item 1: Prompt -->
+                        <div
+                            class="bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-purple-700/50 hover:border-purple-500 transition duration-300"
+                        >
+                            <div class="flex items-center mb-4">
+                                <span
+                                    class="p-3 bg-purple-600 rounded-full mr-4"
+                                    ><i
+                                        data-lucide="brain"
+                                        class="w-6 h-6 text-white"
+                                    ></i
+                                ></span>
+                                <h3
+                                    class="text-2xl font-bold text-purple-300"
+                                    data-i18n="feat-1-h3"
+                                >
+                                    🧠 Exclusive Prompt (Soul)
+                                </h3>
+                            </div>
+                            <p class="text-gray-400" data-i18n="feat-1-p">
+                                Pre-set system instructions to define the AI's
+                                role and conversation style, whether it's a
+                                professional mentor or a creative partner.
+                            </p>
+                        </div>
+
+                        <!-- 人格包 Item 2: Knowledge Base -->
+                        <div
+                            class="bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-blue-700/50 hover:border-blue-500 transition duration-300"
+                        >
+                            <div class="flex items-center mb-4">
+                                <span class="p-3 bg-blue-600 rounded-full mr-4"
+                                    ><i
+                                        data-lucide="book-open"
+                                        class="w-6 h-6 text-white"
+                                    ></i
+                                ></span>
+                                <h3
+                                    class="text-2xl font-bold text-blue-300"
+                                    data-i18n="feat-2-h3"
+                                >
+                                    📚 Knowledge Base (Expertise)
+                                </h3>
+                            </div>
+                            <p class="text-gray-400" data-i18n="feat-2-p">
+                                Import internal corporate documents, past exam
+                                papers, or the latest technical specifications
+                                to equip the AI with domain expertise.
+                            </p>
+                        </div>
+
+                        <!-- 人格包 Item 3: Toolset -->
+                        <div
+                            class="bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-orange-700/50 hover:border-orange-500 transition duration-300"
+                        >
+                            <div class="flex items-center mb-4">
+                                <span
+                                    class="p-3 bg-orange-600 rounded-full mr-4"
+                                    ><i
+                                        data-lucide="wrench"
+                                        class="w-6 h-6 text-white"
+                                    ></i
+                                ></span>
+                                <h3
+                                    class="text-2xl font-bold text-orange-300"
+                                    data-i18n="feat-3-h3"
+                                >
+                                    🔧 Toolset (Capability)
+                                </h3>
+                            </div>
+                            <p class="text-gray-400" data-i18n="feat-3-p">
+                                Integrate file reading/writing, code execution,
+                                web search, database queries, and more, allowing
+                                the AI to perform professional operations.
+                            </p>
+                        </div>
+
+                        <!-- 人格包 Item 4: Memory -->
+                        <div
+                            class="bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-700/50 md:col-span-1 lg:col-span-1 hover:border-gray-500 transition duration-300"
+                        >
+                            <div class="flex items-center mb-4">
+                                <span class="p-3 bg-gray-600 rounded-full mr-4"
+                                    ><i
+                                        data-lucide="save"
+                                        class="w-6 h-6 text-white"
+                                    ></i
+                                ></span>
+                                <h3
+                                    class="text-2xl font-bold text-gray-300"
+                                    data-i18n="feat-4-h3"
+                                >
+                                    💾 Memory Config (Long-term)
+                                </h3>
+                            </div>
+                            <p class="text-gray-400" data-i18n="feat-4-p">
+                                Allows the AI to remember user habits, important
+                                project information, and weak points, providing
+                                continuous and personalized service.
+                            </p>
+                        </div>
+
+                        <!-- 人格包 Item 5: Theme -->
+                        <div
+                            class="bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-pink-700/50 md:col-span-1 lg:col-span-2 hover:border-pink-500 transition duration-300"
+                        >
+                            <div class="flex items-center mb-4">
+                                <span class="p-3 bg-pink-600 rounded-full mr-4"
+                                    ><i
+                                        data-lucide="palette"
+                                        class="w-6 h-6 text-white"
+                                    ></i
+                                ></span>
+                                <h3
+                                    class="text-2xl font-bold text-pink-300"
+                                    data-i18n="feat-5-h3"
+                                >
+                                    🎨 UI Theme (Immersion)
+                                </h3>
+                            </div>
+                            <p class="text-gray-400" data-i18n="feat-5-p">
+                                Customize interface themes, layouts, and
+                                shortcuts for different Personality Packs,
+                                perfectly matching the UX to the usage scenario.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 差异化优势 (Differentiation) -->
+            <section
+                class="py-16 sm:py-24 bg-gray-950 border-b border-gray-800"
+            >
+                <div class="container mx-auto px-4 max-w-6xl">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- 左侧：性能和平台 -->
+                        <div>
+                            <span
+                                class="text-sm font-semibold text-orange-400 uppercase tracking-wider"
+                                data-i18n="section-diff-tagline"
+                                >Performance | Protocol | Platform</span
+                            >
+                            <h2 class="text-4xl font-extrabold mt-2 mb-6">
+                                <span data-i18n="section-diff-h2-1"
+                                    >Native Performance built on Rust,</span
+                                >
+                                <span
+                                    class="text-blue-500"
+                                    data-i18n="section-diff-h2-2"
+                                    >Full Protocol Ecosystem Integration</span
+                                >
+                            </h2>
+                            <ul class="space-y-6">
+                                <li class="flex items-start">
+                                    <i
+                                        data-lucide="zap"
+                                        class="w-6 h-6 text-orange-400 mt-1 flex-shrink-0"
+                                    ></i>
+                                    <div class="ml-4">
+                                        <h3
+                                            class="text-xl font-bold text-white"
+                                            data-i18n="diff-1-h3"
+                                        >
+                                            Cross-Platform Compatibility
+                                        </h3>
+                                        <p
+                                            class="text-gray-400"
+                                            data-i18n="diff-1-p"
+                                        >
+                                            Say goodbye to Electron bloat. Built
+                                            on Rust + Makepad, it starts 10
+                                            times faster and uses 5 times less
+                                            memory. True native performance
+                                            across all platforms.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        data-lucide="plug-zap"
+                                        class="w-6 h-6 text-orange-400 mt-1 flex-shrink-0"
+                                    ></i>
+                                    <div class="ml-4">
+                                        <h3
+                                            class="text-xl font-bold text-white"
+                                            data-i18n="diff-2-h3"
+                                        >
+                                            Model Freedom
+                                        </h3>
+                                        <p
+                                            class="text-gray-400"
+                                            data-i18n="diff-2-p"
+                                        >
+                                            One interface to access all models:
+                                            OpenAI, Claude, Gemini, DeepSeek,
+                                            local Ollama/llama.cpp. Smart
+                                            routing automatically selects the
+                                            optimal model.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i
+                                        data-lucide="layers-3"
+                                        class="w-6 h-6 text-orange-400 mt-1 flex-shrink-0"
+                                    ></i>
+                                    <div class="ml-4">
+                                        <h3
+                                            class="text-xl font-bold text-white"
+                                            data-i18n="diff-3-h3"
+                                        >
+                                            MCP + ACP Ecosystem
+                                        </h3>
+                                        <p
+                                            class="text-gray-400"
+                                            data-i18n="diff-3-p"
+                                        >
+                                            Full support for MCP (Tool Calling
+                                            Protocol) and ACP (Agent Client
+                                            Protocol). Call top Agent CLI
+                                            capabilities like Claude Code
+                                            directly within the GUI, without
+                                            switching terminals.
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 右侧：对比表格 -->
+                        <div class="mt-10 lg:mt-0">
+                            <h3
+                                class="text-2xl font-bold mb-4 text-center"
+                                data-i18n="diff-table-h3"
+                            >
+                                Differentiation Comparison
+                            </h3>
+                            <div
+                                class="bg-gray-800 rounded-xl overflow-hidden shadow-2xl"
+                            >
+                                <table
+                                    class="min-w-full divide-y divide-gray-700"
+                                >
+                                    <thead class="bg-gray-700">
+                                        <tr>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-300"
+                                                data-i18n="diff-table-header-1"
+                                            >
+                                                Comparison Item
+                                            </th>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-300"
+                                                data-i18n="diff-table-header-2"
+                                            >
+                                                ChatGPT/Claude
+                                            </th>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-gray-300"
+                                                data-i18n="diff-table-header-3"
+                                            >
+                                                Cursor/Windsurf
+                                            </th>
+                                            <th
+                                                class="px-4 py-3 text-left text-sm font-semibold text-orange-400"
+                                                data-i18n="diff-table-header-4"
+                                            >
+                                                OmniAI
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-700">
+                                        <tr class="hover:bg-gray-700/50">
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap font-medium text-white"
+                                                data-i18n="diff-table-item-1"
+                                            >
+                                                Pluggable Personality
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-red-500"
+                                            >
+                                                ❌
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-red-500"
+                                            >
+                                                ❌
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-green-400 font-bold"
+                                                data-i18n="diff-table-highlight"
+                                            >
+                                                ✅ Core Feature
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-700/50">
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap font-medium text-white"
+                                                data-i18n="diff-table-item-2"
+                                            >
+                                                Native Performance
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-red-500"
+                                            >
+                                                ❌
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-yellow-500"
+                                            >
+                                                ⚠️ Electron
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-green-400"
+                                                data-i18n="diff-table-highlight-4"
+                                            >
+                                                ✅ Rust Native
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-700/50">
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap font-medium text-white"
+                                                data-i18n="diff-table-item-3"
+                                            >
+                                                Multi-Model Support
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-red-500"
+                                            >
+                                                ❌
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-yellow-500"
+                                            >
+                                                ⚠️ Limited
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-green-400"
+                                                data-i18n="diff-table-highlight-3"
+                                            >
+                                                ✅ All Access
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-700/50">
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap font-medium text-white"
+                                                data-i18n="diff-table-item-4"
+                                            >
+                                                AI Group Chat
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-red-500"
+                                            >
+                                                ❌
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-red-500"
+                                            >
+                                                ❌
+                                            </td>
+                                            <td
+                                                class="px-4 py-4 whitespace-nowrap text-green-400"
+                                                data-i18n="diff-table-highlight-2"
+                                            >
+                                                ✅ Team Collaboration
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 场景案例 (Use Cases) -->
+            <section
+                id="scenarios"
+                class="py-16 sm:py-24 bg-gray-900 border-b border-gray-800"
+            >
+                <div class="container mx-auto px-4 max-w-6xl">
+                    <h2 class="text-4xl font-extrabold text-center mb-16">
+                        <span data-i18n="section-scenarios-h2-1"
+                            >OmniAI: Creating Exclusive Value</span
+                        >
+                    </h2>
+
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- 场景 1：Rust 开发者 -->
+                        <div
+                            class="p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-700"
+                        >
+                            <h3
+                                class="text-2xl font-bold mb-3 text-orange-400"
+                                data-i18n="scenario-1-h3"
+                            >
+                                Scenario 1: Rust Developer "Xiao Ming"
+                            </h3>
+                            <p
+                                class="text-lg text-gray-300 mb-4"
+                                data-i18n="scenario-1-p"
+                            >
+                                Xiao Ming installs the "Rust Developer Pack."
+                                The AI immediately gains Rust expertise, access
+                                to the `rust-analyzer` tool, and code execution
+                                capability.
+                            </p>
+                            <p class="text-gray-400 italic">
+                                <span data-i18n="scenario-1-value-1"
+                                    >💡 Value: Transforms from "General AI" to
+                                    "Rust Expert AI,"</span
+                                >
+                                <span
+                                    class="font-bold text-white"
+                                    data-i18n="scenario-1-value-2"
+                                    >300% efficiency increase.</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- 场景 2：学生 -->
+                        <div
+                            class="p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-700"
+                        >
+                            <h3
+                                class="text-2xl font-bold mb-3 text-blue-400"
+                                data-i18n="scenario-2-h3"
+                            >
+                                Scenario 2: Student "Xiao Hong"
+                            </h3>
+                            <p
+                                class="text-lg text-gray-300 mb-4"
+                                data-i18n="scenario-2-p"
+                            >
+                                Xiao Hong installs the "Postgraduate English
+                                Study Pack." The AI becomes a professional
+                                English teacher with a past exam knowledge base,
+                                providing targeted questions and
+                                sentence-by-sentence explanations.
+                            </p>
+                            <p class="text-gray-400 italic">
+                                <span data-i18n="scenario-2-value-1"
+                                    >💡 Value:</span
+                                >
+                                <span
+                                    class="font-bold text-white"
+                                    data-i18n="scenario-2-value-2"
+                                    >24-hour private tutor,</span
+                                >
+                                <span data-i18n="scenario-2-value-3"
+                                    >fully personalized learning path.</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- 场景 3：企业 -->
+                        <div
+                            class="p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-700"
+                        >
+                            <h3
+                                class="text-2xl font-bold mb-3 text-green-400"
+                                data-i18n="scenario-3-h3"
+                            >
+                                Scenario 3: Enterprise "ABC Company"
+                            </h3>
+                            <p
+                                class="text-lg text-gray-300 mb-4"
+                                data-i18n="scenario-3-p"
+                            >
+                                Deploy the private version, create the "ABC
+                                Corporate Knowledge Pack," import internal
+                                documents. Employees can directly @AI for
+                                consultation in WeChat/Slack groups, with
+                                sensitive data handled locally.
+                            </p>
+                            <p class="text-gray-400 italic">
+                                <span data-i18n="scenario-3-value-1"
+                                    >💡 Value: Corporate knowledge base +
+                                    intelligent customer service,</span
+                                >
+                                <span
+                                    class="font-bold text-white"
+                                    data-i18n="scenario-3-value-2"
+                                    >zero training cost.</span
+                                >
+                            </p>
+                        </div>
+
+                        <!-- 场景 4：创意团队 -->
+                        <div
+                            class="p-8 bg-gray-800 rounded-xl shadow-2xl border border-gray-700"
+                        >
+                            <h3
+                                class="text-2xl font-bold mb-3 text-pink-400"
+                                data-i18n="scenario-4-h3"
+                            >
+                                Scenario 4: Creative Team "XYZ Studio"
+                            </h3>
+                            <p
+                                class="text-lg text-gray-300 mb-4"
+                                data-i18n="scenario-4-p"
+                            >
+                                Create a "Creative Storm" group chat, add 3 AIs
+                                (Planner AI, Copywriter AI, Designer AI) to
+                                collaborate on complex creative tasks.
+                            </p>
+                            <p class="text-gray-400 italic">
+                                <span data-i18n="scenario-4-value-1"
+                                    >💡 Value:</span
+                                >
+                                <span
+                                    class="font-bold text-white"
+                                    data-i18n="scenario-4-value-2"
+                                    >AI Team Collaboration,</span
+                                >
+                                <span data-i18n="scenario-4-value-3"
+                                    >doubling creative efficiency.</span
+                                >
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 服务 (Pricing) Section -->
+            <section
+                id="pricing"
+                class="py-16 sm:py-24 bg-gradient-to-br from-gray-900 to-gray-800"
+            >
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-4xl font-extrabold mb-4">
+                        <span data-i18n="section-services-h2-1"
+                            >Open Source + Value-Added Services,</span
+                        >
+                        <span
+                            class="text-orange-400"
+                            data-i18n="section-services-h2-2"
+                            >Co-building with Community</span
+                        >
+                    </h2>
+                    <p
+                        class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto"
+                        data-i18n="section-services-p"
+                    >
+                        OmniAI's core features are fully open source, while
+                        offering Pro-level services and enterprise private
+                        deployment solutions to meet diverse needs.
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <!-- 开源版 -->
+                        <div
+                            class="bg-gray-900 p-8 rounded-2xl border border-gray-700 shadow-2xl"
+                        >
+                            <h3
+                                class="text-3xl font-bold mb-3 text-white"
+                                data-i18n="price-open-h3"
+                            >
+                                Open Source
+                            </h3>
+                            <p
+                                class="text-5xl font-extrabold text-green-400 mb-6"
+                                data-i18n="price-open-p"
+                            >
+                                Free
+                            </p>
+                            <ul class="text-left space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="check"
+                                        class="w-5 h-5 text-green-400 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-open-li-1"
+                                        >Core features, basic Personality
+                                        Packs</span
+                                    >
+                                </li>
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="check"
+                                        class="w-5 h-5 text-green-400 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-open-li-2"
+                                        >Local LLM integration</span
+                                    >
+                                </li>
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="check"
+                                        class="w-5 h-5 text-green-400 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-open-li-3"
+                                        >Community support</span
+                                    >
+                                </li>
+                            </ul>
+                            <a
+                                href="#"
+                                class="mt-8 block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 rounded-lg transition duration-200"
+                                data-i18n="price-open-cta"
+                                >Get Started Now</a
+                            >
+                        </div>
+
+                        <!-- Pro 版 -->
+                        <div
+                            class="bg-purple-900 p-8 rounded-2xl border-4 border-purple-500 shadow-[0_0_40px_rgba(168,85,247,0.5)] transform scale-105"
+                        >
+                            <h3
+                                class="text-3xl font-bold mb-3 text-white"
+                                data-i18n="price-pro-h3"
+                            >
+                                Pro (Individual)
+                            </h3>
+                            <p class="text-5xl font-extrabold text-white mb-2">
+                                $9.9
+                            </p>
+                            <p
+                                class="text-gray-300 mb-6"
+                                data-i18n="price-pro-price-unit"
+                            >
+                                / mo
+                            </p>
+                            <ul class="text-left space-y-3 text-gray-200">
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="zap"
+                                        class="w-5 h-5 text-purple-300 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-pro-li-1"
+                                        >Advanced Personality Pack market
+                                        access</span
+                                    >
+                                </li>
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="zap"
+                                        class="w-5 h-5 text-purple-300 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-pro-li-2"
+                                        >Cloud config sync</span
+                                    >
+                                </li>
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="zap"
+                                        class="w-5 h-5 text-purple-300 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-pro-li-3"
+                                        >Priority technical support</span
+                                    >
+                                </li>
+                            </ul>
+                            <a
+                                href="#"
+                                class="mt-8 block bg-white hover:bg-gray-100 text-purple-900 font-bold py-3 rounded-lg transition duration-200"
+                                data-i18n="price-pro-cta"
+                                >Upgrade to Pro</a
+                            >
+                        </div>
+
+                        <!-- 企业版 -->
+                        <div
+                            class="bg-gray-900 p-8 rounded-2xl border border-gray-700 shadow-2xl"
+                        >
+                            <h3
+                                class="text-3xl font-bold mb-3 text-white"
+                                data-i18n="price-ent-h3"
+                            >
+                                Enterprise (Private Deployment)
+                            </h3>
+                            <p
+                                class="text-5xl font-extrabold text-orange-400 mb-6"
+                                data-i18n="price-ent-p"
+                            >
+                                Custom
+                            </p>
+                            <ul class="text-left space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="briefcase"
+                                        class="w-5 h-5 text-orange-400 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-ent-li-1"
+                                        >Private deployment</span
+                                    >
+                                </li>
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="briefcase"
+                                        class="w-5 h-5 text-orange-400 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-ent-li-2"
+                                        >Custom development and
+                                        integration</span
+                                    >
+                                </li>
+                                <li class="flex items-center">
+                                    <i
+                                        data-lucide="briefcase"
+                                        class="w-5 h-5 text-orange-400 mr-2"
+                                    ></i
+                                    ><span data-i18n="price-ent-li-3"
+                                        >SLA service guarantee</span
+                                    >
+                                </li>
+                            </ul>
+                            <a
+                                href="mailto:hello@omni-ai.dev"
+                                class="mt-8 block bg-orange-500 hover:bg-orange-600 text-gray-900 font-bold py-3 rounded-lg transition duration-200"
+                                data-i18n="price-ent-cta"
+                                >Contact Sales</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部 (Footer) -->
+        <footer class="bg-gray-950 py-12 border-t border-gray-800">
+            <div class="container mx-auto px-4 text-center">
+                <h4 class="text-3xl font-bold text-gradient mb-4">OmniAI</h4>
+                <p class="text-gray-400 mb-8" data-i18n="footer-tagline">
+                    "Pluggable AI, Infinite Possibilities" — Your AI, Your
+                    Choice.
+                </p>
+
+                <div class="flex justify-center space-x-6 text-gray-500 mb-8">
+                    <a
+                        href="#features"
+                        class="hover:text-white transition"
+                        data-i18n="footer-core-features"
+                        >Core Features</a
+                    >
+                    <a
+                        href="#scenarios"
+                        class="hover:text-white transition"
+                        data-i18n="footer-use-cases"
+                        >Use Cases</a
+                    >
+                    <a
+                        href="mailto:hello@omni-ai.dev"
+                        class="hover:text-white transition"
+                        data-i18n="footer-contact"
+                        >Contact Us</a
+                    >
+                    <a
+                        href="https://github.com/omni-ai"
+                        target="_blank"
+                        class="hover:text-white transition"
+                        data-i18n="footer-github"
+                        >GitHub Open Source</a
+                    >
+                </div>
+
+                <!-- Social Icons -->
+                <div class="flex justify-center space-x-6 text-gray-400 mb-8">
+                    <a
+                        href="https://github.com/omni-ai"
+                        target="_blank"
+                        class="hover:text-white transition"
+                        aria-label="GitHub"
+                    >
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a
+                        href="https://discord.gg/omni-ai"
+                        target="_blank"
+                        class="hover:text-white transition"
+                        aria-label="Discord"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M21.5 2.1c-.2-.1-.5-.1-.7.1s-.3.5-.1.7c1.3 2.1 2 4.6 2 7.2 0 6.6-5.4 12-12 12S-0.3 16.7-0.3 10.1c0-2.6.7-5.1 2-7.2.2-.3.5-.3.7-.1s.3.5.1.7c-1.1 1.7-1.7 3.8-1.7 5.9 0 5.6 4.5 10.1 10.1 10.1s10.1-4.5 10.1-10.1c0-2.1-.6-4.2-1.7-5.9zM15 13.9c.7 0 1.3-.6 1.3-1.3s-.6-1.3-1.3-1.3-1.3.6-1.3 1.3.6 1.3 1.3 1.3zM9 13.9c.7 0 1.3-.6 1.3-1.3S9.7 11.3 9 11.3s-1.3.6-1.3 1.3.6 1.3 1.3 1.3zM8.3 16.5c.3.5 1.1.7 1.8.7s1.5-.2 1.8-.7c.3-.5.2-1.1-.3-1.4-.5-.3-1.1-.2-1.4.3-.1.2-.3.3-.6.3s-.5-.1-.6-.3c-.3-.5-1-.6-1.5-.4-.5.3-.6.9-.3 1.4zM15.7 16.5c.3.5 1.1.7 1.8.7s1.5-.2 1.8-.7c.3-.5.2-1.1-.3-1.4-.5-.3-1.1-.2-1.4.3-.1.2-.3.3-.6.3s-.5-.1-.6-.3c-.3-.5-1-.6-1.5-.4-.5.3-.6.9-.3 1.4zM12 2.3c.6 0 1.2.5 1.2 1.2S12.6 4.7 12 4.7 10.8 4.2 10.8 3.5 11.4 2.3 12 2.3zM15.3 3.5c.3-.4.8-.4 1.2-.1.4.3.4.8.1 1.2-.3.4-.8.4-1.2.1-.4-.3-.4-.8-.1-1.2zM8.7 3.5c.3-.4.8-.4 1.2-.1.4.3.4.8.1 1.2-.3.4-.8.4-1.2.1-.4-.3-.4-.8-.1-1.2zM21.7 10.1c0 5.3-4.3 9.7-9.7 9.7S2.3 15.4 2.3 10.1c0-2 .6-3.9 1.6-5.4.3-.5.9-.6 1.4-.3s.6.9.3 1.4c-.9 1.4-1.4 3.1-1.4 4.3 0 4.3 3.5 7.8 7.8 7.8s7.8-3.5 7.8-7.8c0-1.2-.5-2.9-1.4-4.3-.3-.5-.2-1.1.3-1.4.5-.3 1.1-.2 1.4.3 1.1 1.5 1.6 3.4 1.6 5.4zM6.9 8.2c.4-.3.9-.2 1.2.2.3.4.2.9-.2 1.2-.4.3-.9.2-1.2-.2-.3-.4-.2-.9.2-1.2zM17.1 8.2c.4-.3.9-.2 1.2.2.3.4.2.9-.2 1.2-.4.3-.9.2-1.2-.2-.3-.4-.2-.9.2-1.2z"
+                            />
+                        </svg>
+                    </a>
+                    <a
+                        href="https://x.com/omni_ai_dev"
+                        target="_blank"
+                        class="hover:text-white transition"
+                        aria-label="X (Twitter)"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                        >
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.223L22 21.75h-2.457l-6.527-7.274L8.356 21.75H4.05L13.844 10.45 4.854 2.25H8.16l5.771 7.493zM19.94 19.34L18.02 4.4H16.48l-6.07 8.08L4.62 4.4H2.432l8.236 14.88h1.492l7.78-13.987z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="text-sm text-gray-600" data-i18n="footer-copyright">
+                    &copy; 2025 OmniAI. Built with Rust and Passion.
+                </p>
+            </div>
+        </footer>
+
+        <!-- 初始化 Lucide Icons & Language Switcher Logic -->
+        <script>
+            lucide.createIcons();
+
+            const translations = {
+                "app-title": {
+                    en: "OmniAI - One AI App, Thousand Possibilities",
+                    zh: "OmniAI - 一个 AI 应用，千种可能",
+                    jp: "OmniAI - 一つのAIアプリ、無限の可能性",
+                },
+                "nav-features": {
+                    en: "Core Features",
+                    zh: "核心特色",
+                    jp: "コア機能",
+                },
+                "nav-scenarios": {
+                    en: "Use Cases",
+                    zh: "应用场景",
+                    jp: "利用事例",
+                },
+                "nav-pricing": { en: "Services", zh: "服务", jp: "サービス" },
+                "nav-download": {
+                    en: "Download Now",
+                    zh: "立即下载",
+                    jp: "今すぐダウンロード",
+                },
+                "nav-tagline": {
+                    en: "Pluggable, Cross-Platform AI Assistant Framework",
+                    zh: "可插拔的跨平台 AI 助手框架",
+                    jp: "プラグイン対応クロスプラットフォームAIアシスタントフレームワーク",
+                },
+                "hero-title-1": {
+                    en: "One AI App,",
+                    zh: "一个 AI 应用，",
+                    jp: "一つのAIアプリ、",
+                },
+                "hero-title-2": {
+                    en: "Thousand Possibilities",
+                    zh: "千种可能",
+                    jp: "無限の可能性",
+                },
+                "hero-subtitle": {
+                    en: "OmniAI: A high-performance, pluggable, cross-platform AI assistant framework built on Rust.",
+                    zh: "OmniAI：基于 Rust 构建的高性能、可插拔的跨平台 AI 助手框架。",
+                    jp: "OmniAI：Rustベースの高性能、プラグイン対応クロスプラットフォームAIアシスタントフレームワーク。",
+                },
+                "hero-cta-download": {
+                    en: "Free Download (Native Performance)",
+                    zh: "免费下载 (原生性能)",
+                    jp: "無料ダウンロード (ネイティブ性能)",
+                },
+                "hero-cta-explore": {
+                    en: 'Explore "Personality Packs"',
+                    zh: "探索「人格包」机制",
+                    jp: "「パーソナリティ・パック」を探る",
+                },
+                "hero-platforms": {
+                    en: "🖥️ macOS / Windows / Linux / 📱 iOS / Android / 🌐 Web / ⌨️ CLI",
+                    zh: "🖥️ macOS / Windows / Linux / 📱 iOS / Android / 🌐 Web / ⌨️ CLI",
+                    jp: "🖥️ macOS / Windows / Linux / 📱 iOS / Android / 🌐 Web / ⌨️ CLI",
+                },
+                "section-features-h2-1": {
+                    en: '"Personality Packs"',
+                    zh: "「人格包」",
+                    jp: "「パーソナリティ・パック」",
+                },
+                "section-features-h2-2": {
+                    en: "— Instantly Transform AI into an Expert",
+                    zh: "—— 让 AI 瞬间变身专家",
+                    jp: "—— AIを瞬時にエキスパートに変える",
+                },
+                "section-features-p": {
+                    en: 'The future of AI assistants should not be "one-size-fits-all." Switch AI personalities like changing clothes, becoming an exclusive domain expert in 1 second.',
+                    zh: "未来的 AI 助手不应该是「一刀切」的通用工具。像换衣服一样，1 秒切换 AI 人格，即刻变身专属领域专家。",
+                    jp: "未来のAIアシスタントは「万能」であるべきではありません。服を着替えるようにAIのペルソナを切り替え、1秒で専門分野のエキスパートに変身します。",
+                },
+                "feat-1-h3": {
+                    en: "🧠 Exclusive Prompt (Soul)",
+                    zh: "🧠 专属 Prompt (灵魂)",
+                    jp: "🧠 専用プロンプト (魂)",
+                },
+                "feat-1-p": {
+                    en: "Pre-set system instructions to define the AI's role and conversation style, whether it's a professional mentor or a creative partner.",
+                    zh: "预设的系统指令，让 AI 明确自己的角色和对话风格，无论是专业导师还是创意伙伴。",
+                    jp: "AIの役割と対話スタイルを定義するプリセットのシステム指示。プロのメンター、またはクリエイティブなパートナーとして機能します。",
+                },
+                "feat-2-h3": {
+                    en: "📚 Knowledge Base (Expertise)",
+                    zh: "📚 知识库 (专业)",
+                    jp: "📚 知識ベース (専門性)",
+                },
+                "feat-2-p": {
+                    en: "Import internal corporate documents, past exam papers, or the latest technical specifications to equip the AI with domain expertise.",
+                    zh: "导入企业内部文档、历年真题或最新技术规范，让 AI 拥有领域专业知识。",
+                    jp: "企業内部文書、過去問、最新の技術仕様などをインポートし、AIに専門知識を持たせます。",
+                },
+                "feat-3-h3": {
+                    en: "🔧 Toolset (Capability)",
+                    zh: "🔧 工具集 (能力)",
+                    jp: "🔧 ツールセット (能力)",
+                },
+                "feat-3-p": {
+                    en: "Integrate file reading/writing, code execution, web search, database queries, and more, allowing the AI to perform professional operations.",
+                    zh: "集成文件读写、代码执行、网页搜索、数据库查询等，让 AI 能执行专业操作。",
+                    jp: "ファイルの読み書き、コード実行、Web検索、データベースクエリなどを統合し、AIが専門的な操作を実行できるようにします。",
+                },
+                "feat-4-h3": {
+                    en: "💾 Memory Config (Long-term)",
+                    zh: "💾 记忆配置 (长期)",
+                    jp: "💾 記憶設定 (長期)",
+                },
+                "feat-4-p": {
+                    en: "Allows the AI to remember user habits, important project information, and weak points, providing continuous and personalized service.",
+                    zh: "让 AI 记住用户习惯、重要项目信息和薄弱点，提供持续且个性化的服务。",
+                    jp: "ユーザーの習慣、重要なプロジェクト情報、弱点を記憶し、継続的かつパーソナライズされたサービスを提供します。",
+                },
+                "feat-5-h3": {
+                    en: "🎨 UI Theme (Immersion)",
+                    zh: "🎨 界面主题 (沉浸)",
+                    jp: "🎨 UIテーマ (没入感)",
+                },
+                "feat-5-p": {
+                    en: "Customize interface themes, layouts, and shortcuts for different Personality Packs, perfectly matching the UX to the usage scenario.",
+                    zh: "为不同人格包定制界面主题、布局和快捷键，让 UI/UX 体验与使用场景完美匹配。",
+                    jp: "異なるパーソナリティ・パックごとにインターフェーステーマ、レイアウト、ショートカットをカスタマイズし、UXを使用シナリオに完全に合わせます。",
+                },
+                "section-diff-tagline": {
+                    en: "Performance | Protocol | Platform",
+                    zh: "性能 | 协议 | 平台",
+                    jp: "性能 | プロトコル | プラットフォーム",
+                },
+                "section-diff-h2-1": {
+                    en: "Native Performance built on Rust,",
+                    zh: "基于 Rust 的",
+                    jp: "Rust上に構築された",
+                },
+                "section-diff-h2-2": {
+                    en: "Full Protocol Ecosystem Integration",
+                    zh: "原生性能，协议生态全打通",
+                    jp: "ネイティブ性能、完全なプロトコルエコシステム統合",
+                },
+                "diff-1-h3": {
+                    en: "Cross-Platform Compatibility",
+                    zh: "「全平台通吃」",
+                    jp: "「全プラットフォーム対応」",
+                },
+                "diff-1-p": {
+                    en: "Say goodbye to Electron bloat. Built on Rust + Makepad, it starts 10 times faster and uses 5 times less memory. True native performance across all platforms.",
+                    zh: "告别 Electron 的臃肿。基于 Rust + Makepad 构建，启动速度快 10 倍，内存占用低 5 倍，真·原生性能，全平台覆盖。",
+                    jp: "Electronの肥大化にさようなら。Rust + Makepadベースで、起動は10倍速く、メモリ使用量は5分の1。真のネイティブ性能を全プラットフォームで実現。",
+                },
+                "diff-2-h3": {
+                    en: "Model Freedom",
+                    zh: "「模型自由」",
+                    jp: "「モデルの自由」",
+                },
+                "diff-2-p": {
+                    en: "One interface to access all models: OpenAI, Claude, Gemini, DeepSeek, local Ollama/llama.cpp. Smart routing automatically selects the optimal model.",
+                    zh: "一个界面，接入所有模型：OpenAI, Claude, Gemini, Gemini, DeepSeek，本地 Ollama/llama.cpp。智能路由，自动选择最优模型。",
+                    jp: "OpenAI、Claude、Gemini、DeepSeek、ローカルOllama/llama.cppなど、すべてのモデルに一つのインターフェースからアクセス。最適なモデルを自動的に選択するスマートルーティング。",
+                },
+                "diff-3-h3": {
+                    en: "MCP + ACP Ecosystem",
+                    zh: "「MCP + ACP 生态」",
+                    jp: "「MCP + ACPエコシステム」",
+                },
+                "diff-3-p": {
+                    en: "Full support for MCP (Tool Calling Protocol) and ACP (Agent Client Protocol). Call top Agent CLI capabilities like Claude Code directly within the GUI, without switching terminals.",
+                    zh: "完整支持 MCP (工具调用协议) 和 ACP (Agent 客户端协议)，直接在 GUI 中调用 Claude Code 等顶级 Agent CLI 能力，无需切换终端。",
+                    jp: "MCP (ツール呼び出しプロトコル) および ACP (エージェントクライアントプロトコル) を完全にサポート。Claude CodeなどのトップAgent CLI機能を、ターミナルを切り替えることなくGUI内で直接呼び出し可能。",
+                },
+                "diff-table-h3": {
+                    en: "Differentiation Comparison",
+                    zh: "差异化对比",
+                    jp: "差別化比較",
+                },
+                "diff-table-header-1": {
+                    en: "Comparison Item",
+                    zh: "对比项",
+                    jp: "比較項目",
+                },
+                "diff-table-header-2": {
+                    en: "ChatGPT/Claude",
+                    zh: "ChatGPT/Claude",
+                    jp: "ChatGPT/Claude",
+                },
+                "diff-table-header-3": {
+                    en: "Cursor/Windsurf",
+                    zh: "Cursor/Windsurf",
+                    jp: "Cursor/Windsurf",
+                },
+                "diff-table-header-4": {
+                    en: "OmniAI",
+                    zh: "OmniAI",
+                    jp: "OmniAI",
+                },
+                "diff-table-item-1": {
+                    en: "Pluggable Personality",
+                    zh: "可插拔人格",
+                    jp: "プラグイン対応ペルソナ",
+                },
+                "diff-table-item-2": {
+                    en: "Native Performance",
+                    zh: "原生性能",
+                    jp: "ネイティブ性能",
+                },
+                "diff-table-item-3": {
+                    en: "Multi-Model Support",
+                    zh: "多模型支持",
+                    jp: "マルチモデル対応",
+                },
+                "diff-table-item-4": {
+                    en: "AI Group Chat",
+                    zh: "AI 群聊",
+                    jp: "AIグループチャット",
+                },
+                "diff-table-highlight": {
+                    en: "✅ Core Feature",
+                    zh: "✅ 核心特色",
+                    jp: "✅ コア機能",
+                },
+                "diff-table-highlight-2": {
+                    en: "✅ Team Collaboration",
+                    zh: "✅ 团队协作",
+                    jp: "✅ チームコラボレーション",
+                },
+                "diff-table-highlight-3": {
+                    en: "✅ All Access",
+                    zh: "✅ 全部接入",
+                    jp: "✅ 全てアクセス",
+                },
+                "diff-table-highlight-4": {
+                    en: "✅ Rust Native",
+                    zh: "✅ Rust 原生",
+                    jp: "✅ Rust ネイティブ",
+                },
+                "section-scenarios-h2-1": {
+                    en: "OmniAI: Creating Exclusive Value for Every Role",
+                    zh: "OmniAI：为不同角色 创造专属价值",
+                    jp: "OmniAI：異なる役割のために専用の価値を創造",
+                },
+                "scenario-1-h3": {
+                    en: 'Scenario 1: Rust Developer "Xiao Ming"',
+                    zh: "场景 1：Rust 开发者「小明」",
+                    jp: "事例 1：Rust開発者「小明」",
+                },
+                "scenario-1-p": {
+                    en: 'Xiao Ming installs the "Rust Developer Pack." The AI immediately gains Rust expertise, access to the `rust-analyzer` tool, and code execution capability.',
+                    zh: "小明安装「Rust 开发者人格包」，AI 立即拥有 Rust 专业知识、`rust-analyzer` 工具和代码执行能力。",
+                    jp: "小明は「Rust開発者パーソナリティ・パック」をインストール。AIはすぐにRustの専門知識、`rust-analyzer`ツール、コード実行能力を獲得。",
+                },
+                "scenario-1-value-1": {
+                    en: '💡 Value: Transforms from "General AI" to "Rust Expert AI,"',
+                    zh: "💡 价值：从「通用 AI」变成「Rust 专家 AI」，",
+                    jp: "💡 価値：「汎用AI」から「RustエキスパートAI」へ変貌、",
+                },
+                "scenario-1-value-2": {
+                    en: "300% efficiency increase.",
+                    zh: "效率 提升 300%",
+                    jp: "効率が 300% 向上。",
+                },
+                "scenario-2-h3": {
+                    en: 'Scenario 2: Student "Xiao Hong"',
+                    zh: "场景 2：学生「小红」",
+                    jp: "事例 2：学生「小紅」",
+                },
+                "scenario-2-p": {
+                    en: 'Xiao Hong installs the "Postgraduate English Study Pack." The AI becomes a professional English teacher with a past exam knowledge base, providing targeted questions and sentence-by-sentence explanations.',
+                    zh: "小红安装「考研英语学习包」，AI 变成专业英语老师，带着历年真题知识库，针对性出题和逐句讲解。",
+                    jp: "小紅は「大学院入試英語学習パック」をインストール。AIは過去問知識ベースを持つ専門英語教師となり、的を絞った出題と文ごとの解説を提供。",
+                },
+                "scenario-2-value-1": {
+                    en: "💡 Value:",
+                    zh: "💡 价值：",
+                    jp: "💡 価値：",
+                },
+                "scenario-2-value-2": {
+                    en: "24-hour private tutor,",
+                    zh: "24 小时私人教师，",
+                    jp: "24時間家庭教師、",
+                },
+                "scenario-2-value-3": {
+                    en: "fully personalized learning path.",
+                    zh: "完全个性化的学习路径。",
+                    jp: "完全にパーソナライズされた学習パス。",
+                },
+                "scenario-3-h3": {
+                    en: 'Scenario 3: Enterprise "ABC Company"',
+                    zh: "场景 3：企业「ABC 公司」",
+                    jp: "事例 3：企業「ABC社」",
+                },
+                "scenario-3-p": {
+                    en: 'Deploy the private version, create the "ABC Corporate Knowledge Pack," import internal documents. Employees can directly @AI for consultation in WeChat/Slack groups, with sensitive data handled locally.',
+                    zh: "部署私有版，创建「企业知识包」，导入内部文档，员工直接在企业微信群里 @AI 咨询，敏感数据本地处理。",
+                    jp: "プライベート版をデプロイし、「ABC企業知識パック」を作成、内部文書をインポート。従業員は企業WeChatグループなどで直接AIに相談可能。機密データはローカルで処理。",
+                },
+                "scenario-3-value-1": {
+                    en: "💡 Value: Corporate knowledge base + intelligent customer service,",
+                    zh: "💡 价值：企业知识库 + 智能客服，",
+                    jp: "💡 価値：企業知識ベース + インテリジェントカスタマーサービス、",
+                },
+                "scenario-3-value-2": {
+                    en: "zero training cost.",
+                    zh: "零培训成本。",
+                    jp: "トレーニングコストゼロ。",
+                },
+                "scenario-4-h3": {
+                    en: 'Scenario 4: Creative Team "XYZ Studio"',
+                    zh: "场景 4：创意团队「XYZ 工作室」",
+                    jp: "事例 4：クリエイティブチーム「XYZスタジオ」",
+                },
+                "scenario-4-p": {
+                    en: 'Create a "Creative Storm" group chat, add 3 AIs (Planner AI, Copywriter AI, Designer AI) to collaborate on complex creative tasks.',
+                    zh: "创建一个「创意风暴」群聊，同时加入策划 AI、文案 AI、设计 AI，让 AI 们协作完成复杂创意任务。",
+                    jp: "「クリエイティブストーム」グループチャットを作成し、3つのAI（プランナーAI、コピーライターAI、デザイナーAI）を参加させ、複雑なクリエイティブタスクを共同で完了させます。",
+                },
+                "scenario-4-value-1": {
+                    en: "💡 Value:",
+                    zh: "💡 价值：",
+                    jp: "💡 価値：",
+                },
+                "scenario-4-value-2": {
+                    en: "AI Team Collaboration,",
+                    zh: "AI 团队协作，",
+                    jp: "AIチームコラボレーション、",
+                },
+                "scenario-4-value-3": {
+                    en: "doubling creative efficiency.",
+                    zh: "创意效率翻倍。",
+                    jp: "クリエイティブ効率を倍増。",
+                },
+                "section-services-h2-1": {
+                    en: "Open Source + Value-Added Services,",
+                    zh: "开源 + 增值服务，",
+                    jp: "オープンソース + 付加価値サービス、",
+                },
+                "section-services-h2-2": {
+                    en: "Co-building with Community",
+                    zh: "与社区共建",
+                    jp: "コミュニティと共に構築",
+                },
+                "section-services-p": {
+                    en: "OmniAI's core features are fully open source, while offering Pro-level services and enterprise private deployment solutions to meet diverse needs.",
+                    zh: "OmniAI 核心功能完全开源，同时提供 Pro 级服务和企业私有部署方案，满足不同需求。",
+                    jp: "OmniAIのコア機能は完全にオープンソースであり、Proレベルのサービスと企業向けプライベートデプロイメントソリューションも提供し、多様なニーズに対応します。",
+                },
+                "price-open-h3": {
+                    en: "Open Source",
+                    zh: "开源版",
+                    jp: "オープンソース版",
+                },
+                "price-open-p": { en: "Free", zh: "免费", jp: "無料" },
+                "price-open-li-1": {
+                    en: "Core features, basic Personality Packs",
+                    zh: "核心功能、基础人格包",
+                    jp: "コア機能、基本パーソナリティ・パック",
+                },
+                "price-open-li-2": {
+                    en: "Local LLM integration",
+                    zh: "本地 LLM 接入",
+                    jp: "ローカルLLM統合",
+                },
+                "price-open-li-3": {
+                    en: "Community support",
+                    zh: "社区支持",
+                    jp: "コミュニティサポート",
+                },
+                "price-open-cta": {
+                    en: "Get Started Now",
+                    zh: "立即开始",
+                    jp: "今すぐ始める",
+                },
+                "price-pro-h3": {
+                    en: "Pro (Individual)",
+                    zh: "Pro 版 (个人)",
+                    jp: "Pro版 (個人)",
+                },
+                "price-pro-price-unit": { en: "/ mo", zh: "/ 月", jp: "/ 月" },
+                "price-pro-li-1": {
+                    en: "Advanced Personality Pack market access",
+                    zh: "高级人格包市场权限",
+                    jp: "上級パーソナリティ・パック市場アクセス",
+                },
+                "price-pro-li-2": {
+                    en: "Cloud config sync",
+                    zh: "云端配置同步",
+                    jp: "クラウド設定同期",
+                },
+                "price-pro-li-3": {
+                    en: "Priority technical support",
+                    zh: "优先技术支持",
+                    jp: "優先テクニカルサポート",
+                },
+                "price-pro-cta": {
+                    en: "Upgrade to Pro",
+                    zh: "升级 Pro",
+                    jp: "Proにアップグレード",
+                },
+                "price-ent-h3": {
+                    en: "Enterprise (Private Deployment)",
+                    zh: "Enterprise (私有部署)",
+                    jp: "Enterprise (プライベートデプロイ)",
+                },
+                "price-ent-p": { en: "Custom", zh: "定制", jp: "カスタム" },
+                "price-ent-li-1": {
+                    en: "Private deployment",
+                    zh: "私有化部署",
+                    jp: "プライベートデプロイメント",
+                },
+                "price-ent-li-2": {
+                    en: "Custom development and integration",
+                    zh: "定制开发与集成",
+                    jp: "カスタム開発と統合",
+                },
+                "price-ent-li-3": {
+                    en: "SLA service guarantee",
+                    zh: "SLA 服务保障",
+                    jp: "SLAサービス保証",
+                },
+                "price-ent-cta": {
+                    en: "Contact Sales",
+                    zh: "联系销售",
+                    jp: "営業にお問い合わせ",
+                },
+                "footer-tagline": {
+                    en: '"Pluggable AI, Infinite Possibilities" — Your AI, Your Choice.',
+                    zh: "「插件化 AI，无限可能」 — 你的 AI，你做主。",
+                    jp: "「プラグイン型AI、無限の可能性」 — あなたのAIは、あなたが主導。",
+                },
+                "footer-core-features": {
+                    en: "Core Features",
+                    zh: "核心特色",
+                    jp: "コア機能",
+                },
+                "footer-use-cases": {
+                    en: "Use Cases",
+                    zh: "应用场景",
+                    jp: "利用事例",
+                },
+                "footer-contact": {
+                    en: "Contact Us",
+                    zh: "联系我们",
+                    jp: "お問い合わせ",
+                },
+                "footer-github": {
+                    en: "GitHub Open Source",
+                    zh: "GitHub 开源",
+                    jp: "GitHubオープンソース",
+                },
+                "footer-copyright": {
+                    en: "&copy; 2025 OmniAI. Built with Rust and Passion.",
+                    zh: "&copy; 2025 OmniAI. Built with Rust and Passion.",
+                    jp: "&copy; 2025 OmniAI. Built with Rust and Passion.",
+                },
+            };
+
+            const languageSwitcher =
+                document.getElementById("language-switcher");
+            const defaultLang = "en";
+
+            // Function to update all text content
+            function setLanguage(lang) {
+                // Update all elements with data-i18n attributes
+                document.querySelectorAll("[data-i18n]").forEach((element) => {
+                    const key = element.getAttribute("data-i18n");
+                    if (translations[key] && translations[key][lang]) {
+                        element.innerHTML = translations[key][lang];
+                    }
+                });
+
+                // Update title
+                document.title =
+                    translations["app-title"][lang] ||
+                    translations["app-title"][defaultLang];
+
+                // Update lang attribute of HTML
+                document.documentElement.lang = lang;
+
+                // Store preference in localStorage
+                localStorage.setItem("omni-ai-lang", lang);
+            }
+
+            // Initialize: Check for saved preference or use default
+            let initialLang =
+                localStorage.getItem("omni-ai-lang") || defaultLang;
+
+            // Set the switcher value and load the language
+            if (languageSwitcher) {
+                languageSwitcher.value = initialLang;
+                languageSwitcher.addEventListener("change", (event) => {
+                    setLanguage(event.target.value);
+                });
+            }
+
+            // Initial load
+            setLanguage(initialLang);
+
+            // Additional fix for the h2 element with inline span, as innerHTML overwrite the span
+            function applyH2Fixes(lang) {
+                const h2_diff = document.querySelector("#features h2");
+                if (h2_diff) {
+                    const h2_span1 = h2_diff.querySelector("span:first-child");
+                    const h2_span2 = h2_diff.querySelector("span:last-child");
+                    if (h2_span1 && h2_span2) {
+                        h2_span1.textContent =
+                            translations["section-features-h2-1"][lang] ||
+                            h2_span1.textContent;
+                        h2_diff.childNodes[1].textContent =
+                            translations["section-features-h2-2"][lang] ||
+                            h2_diff.childNodes[1].textContent;
+                    }
+                }
+
+                const h2_diff_tech = document.querySelector(".bg-gray-950 h2");
+                if (h2_diff_tech) {
+                    const h2_span_tech =
+                        h2_diff_tech.querySelector(".text-blue-500");
+                    if (h2_span_tech) {
+                        h2_diff_tech.childNodes[0].textContent =
+                            translations["section-diff-h2-1"][lang] ||
+                            h2_diff_tech.childNodes[0].textContent;
+                        h2_span_tech.textContent =
+                            translations["section-diff-h2-2"][lang] ||
+                            h2_span_tech.textContent;
+                    }
+                }
+
+                const h2_service = document.querySelector("#pricing h2");
+                if (h2_service) {
+                    const h2_span_service =
+                        h2_service.querySelector(".text-orange-400");
+                    if (h2_span_service) {
+                        h2_service.childNodes[0].textContent =
+                            translations["section-services-h2-1"][lang] ||
+                            h2_service.childNodes[0].textContent;
+                        h2_span_service.textContent =
+                            translations["section-services-h2-2"][lang] ||
+                            h2_span_service.textContent;
+                    }
+                }
+
+                const h2_scenarios = document.querySelector("#scenarios h2");
+                if (h2_scenarios) {
+                    const h2_span_scenarios =
+                        h2_scenarios.querySelector(".text-purple-400");
+                    if (h2_span_scenarios) {
+                        h2_scenarios.childNodes[0].textContent =
+                            translations["section-scenarios-h2-1"][lang] ||
+                            h2_scenarios.childNodes[0].textContent;
+                    }
+                }
+            }
+
+            // Re-run the language setting with fixes after initial load
+            function updateAllContent(lang) {
+                setLanguage(lang);
+                applyH2Fixes(lang);
+            }
+
+            // Re-initialize with full update logic
+            if (languageSwitcher) {
+                languageSwitcher.removeEventListener(
+                    "change",
+                    updateAllContent,
+                );
+                languageSwitcher.addEventListener("change", (event) => {
+                    updateAllContent(event.target.value);
+                });
+            }
+            updateAllContent(initialLang);
+        </script>
+    </body>
+</html>
